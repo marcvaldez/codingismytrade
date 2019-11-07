@@ -1,0 +1,137 @@
+/* global */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+	margin: 0 auto;
+	max-width: 1200px;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:visited {
+	color: unset;
+}
+
+/* navigation */
+
+nav {
+	position: fixed;
+	width: 100%;
+	padding-top: 8px;
+	padding-bottom: 12px;
+	border-bottom: 1px solid #DDDDDD;
+	background-color: white;
+	z-index: 100;
+}
+
+nav a { 
+	padding: 10px 30px;
+
+	font-family:  Lato, Arial, sans-serif;
+	font-size: 1.4em;
+	color: #333333;
+}
+
+nav ul {
+	width: 1200px;
+}
+
+nav li {
+	display: inline-block;
+	float: right;
+}
+
+.navmenuitem {
+	margin-top: 8px;
+}
+
+#companylogoitem {
+	float: left;
+}
+
+#searchitem {
+	border: 1px solid #DDDDDD;
+	border-radius: 5px;
+	margin-top: 2px;
+}
+
+#searchform {
+	display: inline-block;
+	vertical-align: top;
+}
+
+#searchicon {
+	padding-top: 7px;
+	padding-right: 8px;
+	width: 1em;
+	height: 1em;
+}
+
+#searchinput {
+	border: 0;
+	outline: none;
+	
+	margin-top: 8px;
+	margin-left: 8px;
+	
+	font-size: 1.1em;
+	font-family: Lato, Arial, sans-serif;
+}
+
+#searchlink {
+	padding: 0;
+}
+
+
+/* main content */
+
+#banner {
+	height: 800px;
+	background-image: url("images/banner.jpg");
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+	background-attachment: fixed;
+}
+
+#bannertext {
+	padding-top: 400px;
+	position: relative;
+	
+	font-family: Lato, Arial, sans-serif;
+	font-weight: lighter;
+	font-size: 1.5em;
+	color: white;
+	text-align: center;
+}
+
+#bannertext h1 {
+	font-family: Lato, Arial, sans-serif;
+	font-weight: lighter;
+	font-size: 4em;
+	margin-bottom: 10px;
+}
+
+.ctabutton {
+	margin: 20px auto;
+	padding: 10px;
+	border-radius: 20px;
+	width: 200px;
+	background-color: #88C5CC;
+	font-weight: normal;
+	color: white;
+}
+
+
+/* footer */
+
+#copyright {
+	text-align: center;
+}
+
