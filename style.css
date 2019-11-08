@@ -18,6 +18,10 @@ ff2800 - red
 	font-family: Lato, Arial, sans-serif;
 }
 
+body {
+	background-color: #F0F0F0;
+}
+
 .wrapper {
 	margin: 0 auto;
 	max-width: 1200px;
@@ -166,9 +170,15 @@ nav li {
 	width: 25%;
 	display: inline-block;
 	text-align: center;
+	background-color: white;
 	
 	border: 1px solid #EEEEEE;
 	box-shadow: 5px 5px 5px #DDDDDD;
+}
+
+.bodycolumn h2 {
+	margin-bottom: 30px;
+	font-weight: normal;
 }
 
 .homelogo {
@@ -178,6 +188,23 @@ nav li {
 	height: 100px;
 }
 
+.button {
+	margin: 30px 0 20px 0;
+	line-height: 24px;
+	border: 2px solid #ff8300;
+	color: #ff8300;
+	padding: 10px;
+	display: block;
+}
+
+#banner2 {
+	height: 800px;
+	background-image: url("images/walkinthepark.jpg");
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+	background-attachment: fixed;
+}
 
 /* footer */
 
