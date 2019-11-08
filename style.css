@@ -61,6 +61,19 @@ hr {
 	box-shadow: 5px 5px 5px #DDDDDD;
 }
 
+.orangebutton {
+	padding: 0;
+	border: 0;
+	background-color: #ff8300;
+	border: 1px solid #ff8300;
+	border-radius: 5px;
+	color: white;
+}
+
+.orangebutton:hover {
+	cursor: pointer;
+}
+
 /* navigation */
 
 nav {
@@ -109,7 +122,7 @@ nav li {
 #searchitem {
 	border: 1px solid #DDDDDD;
 	border-radius: 5px;
-	margin-top: 10px;
+	margin-top: 14px;
 }
 
 #searchform {
@@ -118,17 +131,15 @@ nav li {
 }
 
 #searchicon {
-	padding-top: 7px;
+	padding-top: 5px;
 	padding-right: 8px;
-	width: 1em;
-	height: 1em;
+	width: 1.5em;
+	height: 1.5em;
 }
 
 #searchinput {
 	border: 0;
 	outline: none;
-	
-	margin-top: 8px;
 	margin-left: 8px;
 	
 	font-size: 1.1em;
@@ -136,6 +147,14 @@ nav li {
 
 #searchlink {
 	padding: 0;
+	border: 0;
+	background-color: transparent;
+	width: 2em;
+	height: 2em;
+}
+
+#searchlink:hover {
+	cursor: pointer;
 }
 
 

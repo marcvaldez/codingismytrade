@@ -1,5 +1,6 @@
 h1 {
 	margin-top: 40px;
+	color: #084a82;
 }
 
 .contactcontainer {
@@ -36,5 +37,5 @@ h1 {
 
 .contactform input[type=submit] {
 	font-size: 1.2em;
-	padding: 10px;
+	padding: 10px 30px;
 }
