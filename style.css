@@ -3,7 +3,6 @@
 color reference
 
 ff8300 - orange
-88C5CC - light blue
 084a82 - dark blue
 ff2800 - red
 
@@ -77,6 +76,11 @@ hr {
 	color: white;
 	padding: 10px;
 	display: block;
+}
+
+.button:hover {
+	background-color: #ff2800;
+	border-color: #ff2800;
 }
 
 .button:visited {
