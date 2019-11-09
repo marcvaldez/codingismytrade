@@ -12,7 +12,7 @@
 	background-image: url("images/banner.jpg");
 }
 
-#bannertext {
+.bannertext {
 	padding-top: 400px;
 	position: relative;
 	
@@ -23,7 +23,7 @@
 	text-shadow: 4px 4px 5px #333333; 
 }
 
-#bannertext h1 {
+.bannertext h1 {
 	font-weight: lighter;
 	font-size: 4em;
 	margin-bottom: 10px;

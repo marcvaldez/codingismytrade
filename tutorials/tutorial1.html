@@ -29,7 +29,7 @@
 		<li class="navmenuitem"><a href="../index.html#tutorials">Tutorials</a></li>
 		<li id="searchitem">
 		  <form id="searchform" method="GET" action="http://www.google.com/search">
-			<input id="searchinput" type="text" name="q"></input>
+			<input id="searchinput" type="text" name="q">
             <button type="submit" id="searchlink"><img id="searchicon" src="../images/search.svg" alt="Search"></button>
   		  </form>
 		</li>
@@ -55,7 +55,7 @@
   
   <div class="content">
     <h1>Socket Programming Tutorial using C# and the .Net Framework</h1>
-    <a class="anchor" name="intro"></a>
+    <a class="anchor" id="intro"></a>
     <p>In this tutorial, we will create a simple server app and client app that will communicate with each other using TCP.</p>
 
     <p>Our process flow will use the following steps:</p>
@@ -68,7 +68,7 @@
 <li>The client will receive the server's reponse and display it on the UI.</li>
 	</ol>
 	
-    <a class="anchor" name="part1"></a>
+    <a class="anchor" id="part1"></a>
 	<h2>Part 1: Creating the Server Application</h2>
 	<hr>
 	
@@ -161,7 +161,7 @@ Console.Read();
 	</pre>
 	<p>This code will prevent the console window from immediately closing after the program ends.</p>
 	
-    <a class="anchor" name="part2"></a>
+    <a class="anchor" id="part2"></a>
 	<h2>Part 2: Creating the Client Application</h2>
 	<hr>
 
@@ -180,7 +180,7 @@ if (!IPAddress.TryParse(txtIpAddress.Text, out IPAddress ipAddress))
 {
 	MessageBox.Show("Please enter a valid IP Address.");
 }
-else if (!int.TryParse(txtPort.Text, out int port) || port < 1 || port > 65535)
+else if (!int.TryParse(txtPort.Text, out int port) || port &lt; 1 || port &gt; 65535)
 {
 	MessageBox.Show("Please enter a valid port number.");
 }
@@ -214,7 +214,7 @@ else
 	<p>The above code first validates user input and then creates a socket similar to how we did it in the server application. Instead of binding into an IP address and port, we directly call the socket's connect() method and specify the IP address and port number we want to connect to. The connect() method also automatically assigns the local machine's IP address to the socket and finds an unused ethereal port for the socket to use.</p>
 	<p>After connecting to the server, we send a message the same way we did in the server application. Then we also create a loop similar to what we did in the server app for reading data from the socket and converting the data into a UTF-8 encoded string. We then display the string containing the server's response by appending it to the contents of the txtResponse textbox.</p>
 
-    <a class="anchor" name="part3"></a>
+    <a class="anchor" id="part3"></a>
 	<h2>Part 3: Putting It All Together</h2>
 	<hr>
 
@@ -239,9 +239,9 @@ else
   
 	<h3>Step 3</h3>
 	<p>If everything goes well, you should be able to see the client's message on the server app and the server's response in the output textbox on the client app.</p>
-	<p>If you're having any issues, you can compare your client and server code to the DemoServer and DemoClient projects that you can download from <a href=https://github.com/marcvaldez/Socket-Programming-Tutorial" target="cimtprojects">https://github.com/marcvaldez/Socket-Programming-Tutorial</a>.</p>
+	<p>If you're having any issues, you can compare your client and server code to the DemoServer and DemoClient projects that you can download from <a href="https://github.com/marcvaldez/Socket-Programming-Tutorial" target="cimtprojects">https://github.com/marcvaldez/Socket-Programming-Tutorial</a>.</p>
 	
-    <a class="anchor" name="part4"></a>
+    <a class="anchor" id="part4"></a>
 	<h2>Challenge</h2>
 	<hr>
 	
@@ -249,8 +249,8 @@ else
 	<ul>
 		<li>Add a "Disconnect" button to client app and make the client and server continue exchanging messages until the "Disconnect" button is clicked.</li>
 		<li>Modify the server app to make it able to connect to multiple clients.</li>
-		<li>Convert the client app into a peer-to-peer chat program by adding some of the server code to the client. (A working peer-to-peer chat program can be downloaded from <a href=https://github.com/marcvaldez/Socket-Programming-Tutorial" target="cimtprojects">https://github.com/marcvaldez/Socket-Programming-Tutorial</a>.)</li>
-	<ul>
+		<li>Convert the client app into a peer-to-peer chat program by adding some of the server code to the client. (A working peer-to-peer chat program can be downloaded from <a href="https://github.com/marcvaldez/Socket-Programming-Tutorial" target="cimtprojects">https://github.com/marcvaldez/Socket-Programming-Tutorial</a>.)</li>
+	</ul>
 	</div>
   <div class="adscolumn">
 	<a href="http://www.nbcc.ca" target="_blank"><img src="../images/ads.png" alt="Ad"></a>

@@ -29,7 +29,7 @@
 		<li class="navmenuitem"><a href="../index.html#tutorials">Tutorials</a></li>
 		<li id="searchitem">
 		  <form id="searchform" method="GET" action="http://www.google.com/search">
-			<input id="searchinput" type="text" name="q"></input>
+			<input id="searchinput" type="text" name="q">
             <button type="submit" id="searchlink"><img id="searchicon" src="../images/search.svg" alt="Search"></button>
   		  </form>
 		</li>
@@ -55,16 +55,16 @@
   <div class="content">
     <h1>Microsoft .NET Socket API Implementation</h1>
 
-    <a class="anchor" name="intro"></a>
+    <a class="anchor" id="intro"></a>
 	<h2>System.Net.Sockets</h2>
 	<hr>
 	<br>
 	<ul>
 		<li>The System.Net.Sockets.Socket class is an implementation of the Berkeley Sockets API in the .NET framework.</li>
 		<li>In addition to the standard Berkeley Socket functions, it also features methods for asynchronous sending and receiving of data.</li>
-	<ul>
+	</ul>
 	
-    <a class="anchor" name="part1"></a>
+    <a class="anchor" id="part1"></a>
 	<h2>List of Commonly Used Methods in the Socket Class</h2>
 	<hr>
 	<h3>Socket() (Constructor)</h3>
@@ -77,7 +77,7 @@
 	<h3>Shutdown()</h3>
 	<h3>Close()</h3>
 
-    <a class="anchor" name="part2"></a>
+    <a class="anchor" id="part2"></a>
 	<h2>Commonly Used Asynchronous Methods in the Socket Class</h2>
 	<hr>
 	<h3>AcceptAsync(), BeginAccept(), and EndAccept()</h3>
@@ -89,7 +89,7 @@
 	<p>The *Async versions of the methods are used if you prefer to code using the <a href="https://docs.microsoft.com/en-us/dotnet/standard/asynchronous-programming-patterns/task-based-asynchronous-pattern-tap">Task-based asynchronous pattern (TAP)</a> which is a style of programming asynchronous code.</p>
 	<p>The Begin* and End* versions can be used if you prefer to code using the more traditional <a href="https://docs.microsoft.com/en-us/dotnet/standard/asynchronous-programming-patterns/asynchronous-programming-model-apm">APM pattern</a>.</p>
 	
-    <a class="anchor" name="part3"></a>
+    <a class="anchor" id="part3"></a>
 	<h2>Commonly Used Properties of the Socket Class</h2>
 	<hr>
 	<h3>Available</h3>

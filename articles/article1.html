@@ -29,7 +29,7 @@
 		<li class="navmenuitem"><a href="../index.html#tutorials">Tutorials</a></li>
 		<li id="searchitem">
 		  <form id="searchform" method="GET" action="http://www.google.com/search">
-			<input id="searchinput" type="text" name="q"></input>
+			<input id="searchinput" type="text" name="q">
             <button type="submit" id="searchlink"><img id="searchicon" src="../images/search.svg" alt="Search"></button>
   		  </form>
 		</li>
@@ -59,13 +59,13 @@
   <div class="content">
     <h1>All About Network Sockets</h1>
 	
-    <a class="anchor" name="part1"></a>
+    <a class="anchor" id="part1"></a>
 	<h2>What is as Socket?</h2>
 	<hr>
 	<br>
 	<p>A socket is one endpoint of a two-way communication link between two programs running on the network.</p>
 	
-    <a class="anchor" name="part2"></a>
+    <a class="anchor" id="part2"></a>
 	<h2>Types of Sockets</h2>
 	<hr>
 	<h3>Stream Socket</h3>
@@ -89,7 +89,7 @@
 		<li>Also used by network utility programs such as nmap, ping, etc.</li>
 	</ul>
 
-    <a class="anchor" name="part3"></a>
+    <a class="anchor" id="part3"></a>
 	<h2>Socket API</h2>
 	<hr>
 	<br>
@@ -101,7 +101,7 @@
 	  <figcaption>Figure 1. This diagram shows how the Socket API fits in the OSI and TCP/IP models.</figcaption>
 	</figure>
 	
-    <a class="anchor" name="part4"></a>
+    <a class="anchor" id="part4"></a>
 	<h2>Berkeley Sockets</h2>
 	<hr>
 	<br>
@@ -111,7 +111,7 @@
 		<li>Commonly used for UDP</li>
 	</ul>
 	
-    <a class="anchor" name="part5"></a>
+    <a class="anchor" id="part5"></a>
 	<h2>List of Common Berkeley Socket API Functions</h2>
 	<hr>
 	<h3>socket()</h3>
@@ -150,7 +150,7 @@
 	  <figcaption>Figure 3. This diagram shows a typical typical UDP socket API call sequence. Note the absense of connection-specific socket calls such as connect(), listen(), and accept().</figcaption>
 	</figure>
 
-    <a class="anchor" name="part6"></a>
+    <a class="anchor" id="part6"></a>
 	<h2>Socket Protocols</h2>
 	<hr>
 	<br>
@@ -162,7 +162,7 @@
 	<br>
 	<p>Note that you can use the same port number for different protocols.</p>
 
-    <a class="anchor" name="part7"></a>
+    <a class="anchor" id="part7"></a>
 	<h2>Socket Domains (aka Protocol Family/Address Family)</h2>
 	<hr>
 	<h3>AF_INET/PF_INET</h3>
@@ -181,7 +181,7 @@
 		<li>Used in UNIX for inter-process communication (IPC)</li>
 	</ul>
 
-    <a class="anchor" name="part8"></a>
+    <a class="anchor" id="part8"></a>
 	<h2>Socket Operating Modes</h2>
 	<hr>
 	<h3>Blocking Mode</h3>
