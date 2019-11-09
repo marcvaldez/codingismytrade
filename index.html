@@ -4,6 +4,7 @@
 <title>Coding Is My Trade</title>
 <meta charset="utf-8">
 <link href="style.css" rel="stylesheet">
+<link href="home.css" rel="stylesheet">
 
 <!-- Fonts -->
 <link href="https://fonts.googleapis.com/css?family=Lato:300,400&display=swap" rel="stylesheet">
@@ -13,18 +14,16 @@
 </head>
 <body>
 
-
   <header>
-      
   </header>
   <nav>
     <div class="wrapper">
 	  <ul> 
 		<li id="companylogoitem"><a id="companylink" href="index.html"><img class="companylogo" src="images/logo.png" alt="Search"></a></li>
 		<li class="navmenuitem"><a href="contact.html">Contact</a></li>
-		<li class="navmenuitem"><a href="projects/projects.html">Projects</a></li>
-		<li class="navmenuitem"><a href="articles/articles.html">Articles</a></li>
-		<li class="navmenuitem"><a href="tutorials/tutorials.html">Tutorials</a></li>
+		<li class="navmenuitem"><a href="index.html#projects">Projects</a></li>
+		<li class="navmenuitem"><a href="index.html#articles">Articles</a></li>
+		<li class="navmenuitem"><a href="index.html#tutorials">Tutorials</a></li>
 		<li id="searchitem">
 		  <form id="searchform" method="GET" action="http://www.google.com/search">
 			<input id="searchinput" type="text" name="q"></input>
@@ -38,41 +37,132 @@
 
 <!-- banner area -->
 
-<div id="banner">
+<div id="banner1" class="banner">
 	<div id="bannertext">
 	<h1>Learn Programming</h1>
 	Access free programming tutorials to help you learn.
-	<div class="ctabutton"><a href="tutorials/tutorials.html">GET STARTED</a></div>
+	<div class="ctabutton"><a href="index.html#tutorials">GET STARTED</a></div>
 	</div>
 </div>
 
 
 <!-- main content area -->
 <div class="wrapper centertext">
-  <div class="bodycolumn card">
+  <div class="body3column card">
     <img class="homelogo" src="images/homelogocode.png">
 	<h2>Programming Tutorials</h2>
 	<p>Sharpen your skills with tutorials on a variety of programming topics.</p>
-	<a class="button" href="tutorials/tutorials.html">Learn more...</a>
+	<a class="button" href="index.html#tutorials">Learn more...</a>
   </div>
-  <div class="bodycolumn card">
+  <div class="body3column card">
     <img class="homelogo" src="images/homelogoarticle.png">
-	<h2>IT Articles and Lessons</h2>
+	<h2>Lessons and Articles</h2>
 	<p>Quench your thirst for knowledge with IT-related articles.</p>
-	<a class="button" href="tutorials/tutorials.html">Learn more...</a>
+	<a class="button" href="index.html#articles">Learn more...</a>
   </div>
-  <div class="bodycolumn card">
+  <div class="body3column card">
     <img class="homelogo" src="images/homelogoproject.png">
 	<h2>Programming Projects</h2>
 	<p>Learn how stuff works by analyzing working code.</p>
-	<a class="button" href="tutorials/tutorials.html">Learn more...</a>
+	<a class="button" href="index.html#projects">Learn more...</a>
   </div>
 </div>
 
-<div id="banner2">
+<div id="banner2" class="banner">
 	<div id="bannertext">
 	<h1>Coding is a walk in the park...</h1>
 	...if you have access to the right online resources.
+	</div>
+</div>
+
+<!-- second content area -->
+<div class="wrapper contentarea2">
+  <a class="anchor" name="tutorials"></a>
+  <div class="category">Programming Tutorials</div>
+  <hr>
+  <div>
+    <a href="tutorials/tutorial1.html">
+    <div class="body2column card">
+	  <div class="cardcontentcol1">
+      <img class="homelogo" src="images/socket3.png">
+	  </div>
+	  <div class="cardcontentcol2">
+	  <h2>Socket Programming Tutorial Using C# and .NET</h2>
+	  <p>This tutorial will teach you the basics of socket programming.</p>
+	  </div>
+    </div>
+	</a>
+    <div class="body2column card">
+	  <div class="cardcontentcol1">
+      <img class="homelogo" src="images/homelogoeducation.png">
+	  </div>
+	  <div class="cardcontentcol2">
+	  <h2>(Coming Soon)<br>Introduction to C#</h2>
+	  <p>Learn C# with this beginner-friendly tutorial.</p>
+	  </div>
+    </div>
+  </div>
+  <a class="anchor" name="articles"></a>
+  <div class="category">Lessons and Articles</div>
+  <hr>
+  <div>
+    <a href="articles/article1.html">
+    <div class="body2column card">
+	  <div class="cardcontentcol1">
+      <img class="homelogo" src="images/socket.png">
+	  </div>
+	  <div class="cardcontentcol2">
+	  <h2>All Abouts Network Sockets</h2>
+	  <p>With this article, you will learn about network sockets and socket APIs.</p>
+	  </div>
+    </div>
+	</a>
+    <a href="articles/article2.html">
+    <div class="body2column card">
+	  <div class="cardcontentcol1">
+      <img class="homelogo" src="images/socket2.png">
+	  </div>
+	  <div class="cardcontentcol2">
+	  <h2>Microsoft .NET Socket API</h2>
+	  <p>Learn about Microsoft's implementation of the Berkeley Socket API.</p>
+	  </div>
+    </div>
+	</a>
+  </div>
+  <a class="anchor" name="projects"></a>
+  <div class="category">Programming Projects</div>
+  <hr>
+  <div>
+    <a href="https://github.com/marcvaldez/Socket-Programming-Tutorial" target="cimtprojects">
+    <div class="body2column card">
+	  <div class="cardcontentcol1">
+      <img class="homelogo" src="images/cloudmessage.png">
+	  </div>
+	  <div class="cardcontentcol2">
+	  <h2>Simple C# Client and Server</h2>
+	  <p>This project demonstrates how to create applications that communicate with each other through the network.</p>
+	  </div>
+    </div>
+	</a>
+    <a href="https://github.com/marcvaldez/Socket-Programming-Tutorial" target="cimtprojects">
+    <div class="body2column card">
+	  <div class="cardcontentcol1">
+      <img class="homelogo" src="images/chat.png">
+	  </div>
+	  <div class="cardcontentcol2">
+	  <h2>Peer-to-Peer Chat Applicaton</h2>
+	  <p>This is a simple serverless C# Windows Forms chat program.</p>
+	  </div>
+    </div>
+  </div>
+</div>
+
+<div id="banner3" class="banner">
+	<div id="bannertext">
+	<h1>Don't be left out in the cold</h1>
+	Contact us to join our mailing list and get our latest content.
+	<div class="ctabutton"><a href="contact.html">CONTACT US</a></div>
+	</div>
 	</div>
 </div>
 
@@ -89,9 +179,9 @@
 	  <div class="footercolumn">
 	  <h3>Resources</h3>
 	  <ul>
-		<li><a href="tutorials/tutorials.html">Tutorials</a></li>
-		<li><a href="articles/articles.html">Articles</a></li>
-		<li><a href="projects/projects.html">Projects</a></li>
+		<li><a href="index.html#tutorials">Tutorials</a></li>
+		<li><a href="index.html#articles">Articles</a></li>
+		<li><a href="index.html#projects">Projects</a></li>
 	  </ul>
 	  </div>
 	  <div class="footercolumn">
@@ -100,7 +190,7 @@
 	    <li><a href="contact.html">Contact Us</a></li>
 	  </ul>
 	  </div>
-      <div class="centertext attribution">Created my free logo and icons at <a href="logomakr.com">LogoMakr.com</a></div>
+      <div class="centertext attribution">Created my free logo and icons at <a href="http://www.logomakr.com">LogoMakr.com</a></div>
       <hr>
       <div id="copyright">Copyright &copy; 2019 Marco Valdez</div>
    </div>

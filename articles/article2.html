@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Coding Is My Trade - Microsoft .NET Socket API</title>
+<meta charset="utf-8">
+<link href="../style.css" rel="stylesheet">
+<link href="../content.css" rel="stylesheet">
+<link href="article.css" rel="stylesheet">
+
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css?family=Lato:300,400&display=swap" rel="stylesheet">
+
+<link rel="shortcut icon" href="../favicon.ico">
+
+</head>
+<body>
+
+
+  <header>
+      
+  </header>
+  <nav>
+    <div class="wrapper">
+	  <ul> 
+		<li id="companylogoitem"><a id="companylink" href="../index.html"><img class="companylogo" src="../images/logo.png" alt="Search"></a></li>
+		<li class="navmenuitem"><a href="../contact.html">Contact</a></li>
+		<li class="navmenuitem"><a href="../index.html#projects">Projects</a></li>
+		<li class="navmenuitem"><a href="../index.html#articles">Articles</a></li>
+		<li class="navmenuitem"><a href="../index.html#tutorials">Tutorials</a></li>
+		<li id="searchitem">
+		  <form id="searchform" method="GET" action="http://www.google.com/search">
+			<input id="searchinput" type="text" name="q"></input>
+            <button type="submit" id="searchlink"><img id="searchicon" src="../images/search.svg" alt="Search"></button>
+  		  </form>
+		</li>
+	  </ul>
+	</div>
+  </nav>
+  <main>
+
+<!-- main content area -->
+<div class="wrapper">
+  <div class="topspacer"></div>
+  
+  <div class="toc">
+  <h1>Table of Contents</h1>
+  <ul>
+    <li><a href="#intro">System.Net.Sockets</a></li>
+    <li><a href="#part1">List of Commonly Used Methods in the Socket Class</a></li>
+    <li><a href="#part2">Commonly Used Asynchronous Methods</a></li>
+    <li><a href="#part3">Commonly Used Properties of the Socket Class</a></li>
+  </ul>
+  </div>
+  
+  <div class="content">
+    <h1>Microsoft .NET Socket API Implementation</h1>
+
+    <a class="anchor" name="intro"></a>
+	<h2>System.Net.Sockets</h2>
+	<hr>
+	<br>
+	<ul>
+		<li>The System.Net.Sockets.Socket class is an implementation of the Berkeley Sockets API in the .NET framework.</li>
+		<li>In addition to the standard Berkeley Socket functions, it also features methods for asynchronous sending and receiving of data.</li>
+	<ul>
+	
+    <a class="anchor" name="part1"></a>
+	<h2>List of Commonly Used Methods in the Socket Class</h2>
+	<hr>
+	<h3>Socket() (Constructor)</h3>
+	<h3>Bind()</h3>
+	<h3>Listen()</h3>
+	<h3>Accept()</h3>
+	<h3>Connect()</h3>
+	<h3>Send()</h3>
+	<h3>Receive()</h3>
+	<h3>Shutdown()</h3>
+	<h3>Close()</h3>
+
+    <a class="anchor" name="part2"></a>
+	<h2>Commonly Used Asynchronous Methods in the Socket Class</h2>
+	<hr>
+	<h3>AcceptAsync(), BeginAccept(), and EndAccept()</h3>
+	<h3>SendAsync(), BeginSend(), and EndSend()</h3>
+	<h3>ReceiveAsync(), BeginReceive(), and EndReceive()</h3>
+	<br>
+	<p>Asynchronous methods are helpful when you do not want your application to block while waiting for operations such as sending and receiving to complete. These are useful for programs that are event-driven or user-facing such as Windows Forms apps.</p>
+	<p>When using the asynchronous methods, you may no longer need to set the Blocking mode of the socket to false.</p>
+	<p>The *Async versions of the methods are used if you prefer to code using the <a href="https://docs.microsoft.com/en-us/dotnet/standard/asynchronous-programming-patterns/task-based-asynchronous-pattern-tap">Task-based asynchronous pattern (TAP)</a> which is a style of programming asynchronous code.</p>
+	<p>The Begin* and End* versions can be used if you prefer to code using the more traditional <a href="https://docs.microsoft.com/en-us/dotnet/standard/asynchronous-programming-patterns/asynchronous-programming-model-apm">APM pattern</a>.</p>
+	
+    <a class="anchor" name="part3"></a>
+	<h2>Commonly Used Properties of the Socket Class</h2>
+	<hr>
+	<h3>Available</h3>
+	<p>Gets the amount of data that has been received from the network and is available to be read.</p>
+	<h3>Blocking</h3>
+	<p>Gets or sets the blocking mode of the socket. true by default.</p>
+	<h3>Connected</h3>
+	<p>Is true if the socket is connected.</p>
+	<h3>DontFragment</h3>
+	<p>Used if you don't want the packets to be fragmented.</p>
+	<h3>RemoteEndPoint</h3>
+	<p>Allows you to get the IP address and port you are connected to on the other end.</p>
+	<h3>Ttl</h3>
+	<p>Gets or sets a value that specifies the Time To Live (TTL) value of Internet Protocol (IP) packets sent by the Socket.</p>
+	<br><br>
+	<p>Source: <a href="https://docs.microsoft.com/en-us/dotnet/api/system.net.sockets.socket?view=netframework-4.8">https://docs.microsoft.com/en-us/dotnet/api/system.net.sockets.socket?view=netframework-4.8</a></p>
+
+	</div>
+  <div class="adscolumn">
+	<a href="http://www.nbcc.ca" target="_blank"><img src="../images/ads.png" alt="Ad"></a>
+  </div>
+
+</div>
+
+
+  </main>
+  <footer>
+    <div class="wrapper">
+	  <div class="footercolumn">
+	    <div id="footerlogocontainer">
+	      <a href="../index.html"><img class="companylogo" src="../images/logo.png" alt="Coding is my Trade"></a>
+		</div>
+		<span><a href="mailto:info@codingismy.trade?subject=CIMT">info@codingismy.trade</a></span>
+	  </div>
+	  <div class="footercolumn">
+	  <h3>Resources</h3>
+	  <ul>
+		<li><a href="../index.html#tutorials">Tutorials</a></li>
+		<li><a href="../index.html#articles">Articles</a></li>
+		<li><a href="../index.html#projects">Projects</a></li>
+	  </ul>
+	  </div>
+	  <div class="footercolumn">
+	  <h3>Company</h3>
+	  <ul>
+	    <li><a href="../contact.html">Contact Us</a></li>
+	  </ul>
+	  </div>
+      <div class="centertext attribution">Created my free logo and icons at <a href="http://www.logomakr.com">LogoMakr.com</a></div>
+      <hr>
+      <div id="copyright">Copyright &copy; 2019 Marco Valdez</div>
+   </div>
+  </footer>
+
+
+</body>
+</html>

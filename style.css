@@ -36,6 +36,13 @@ a:visited {
 	color: unset;
 }
 
+a.anchor {
+	display: block;
+    position: relative;
+    top: -70px;
+    visibility: hidden;
+}
+
 hr {
 	border: 0;
 	border-top: 1px solid #DDDDDD;
@@ -61,17 +68,19 @@ hr {
 	box-shadow: 5px 5px 5px #DDDDDD;
 }
 
-.orangebutton {
-	padding: 0;
-	border: 0;
-	background-color: #ff8300;
-	border: 1px solid #ff8300;
+.button {
+	margin: 30px auto 20px auto;
+	line-height: 24px;
+	border: 2px solid #ff8300;
 	border-radius: 5px;
+	background-color: #ff8300;
 	color: white;
+	padding: 10px;
+	display: block;
 }
 
-.orangebutton:hover {
-	cursor: pointer;
+.button:visited {
+	color: white;
 }
 
 /* navigation */
@@ -91,6 +100,10 @@ nav a {
 
 	font-size: 1.4em;
 	color: #333333;
+}
+
+nav a:hover {
+	color: #ff2800;
 }
 
 nav ul {
@@ -158,85 +171,6 @@ nav li {
 }
 
 
-/* main content */
-
-#banner {
-	height: 800px;
-	background-image: url("images/banner.jpg");
-	background-repeat: no-repeat;
-	background-position: center center;
-	background-size: cover;
-	background-attachment: fixed;
-}
-
-#bannertext {
-	padding-top: 400px;
-	position: relative;
-	
-	font-weight: lighter;
-	font-size: 1.5em;
-	color: white;
-	text-align: center;
-	text-shadow: 4px 4px 5px #333333; 
-}
-
-#bannertext h1 {
-	font-weight: lighter;
-	font-size: 4em;
-	margin-bottom: 10px;
-}
-
-.ctabutton {
-	margin: 20px auto;
-	padding: 10px;
-	border-radius: 8px;
-	width: 200px;
-	background-color: #084a82;
-	font-weight: normal;
-	color: white;
-}
-
-.bodycolumn {
-	margin: 100px 10px;
-	padding: 12px;
-	width: 25%;
-	display: inline-block;
-	text-align: center;
-}
-
-.bodycolumn h2 {
-	margin-bottom: 30px;
-	font-weight: normal;
-	color: #084a82;
-}
-
-.homelogo {
-	margin: 30px;
-	
-	width: 100px;
-	height: 100px;
-}
-
-.button {
-	margin: 30px auto 20px auto;
-	width: 120px;
-	line-height: 24px;
-	border: 2px solid #ff8300;
-	border-radius: 5px;
-	color: #ff8300;
-	padding: 10px;
-	display: block;
-}
-
-#banner2 {
-	height: 800px;
-	background-image: url("images/walkinthepark.jpg");
-	background-repeat: no-repeat;
-	background-position: center center;
-	background-size: cover;
-	background-attachment: fixed;
-}
-
 /* footer */
 
 footer {
@@ -265,6 +199,10 @@ footer h3 {
 	line-height: 40px;
 }
 
+footer a:hover {
+	color: #ff8300;
+}
+
 .footercolumn {
 	display: inline-block;
 	width: 33%;
@@ -279,4 +217,3 @@ footer h3 {
 	font-style: italic;
 	font-size: 0.8em;
 }
-

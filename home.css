@@ -1,0 +1,124 @@
+/* homepage-specific styling */
+
+.banner {
+	height: 800px;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+	background-attachment: fixed;
+}
+
+#banner1 {
+	background-image: url("images/banner.jpg");
+}
+
+#bannertext {
+	padding-top: 400px;
+	position: relative;
+	
+	font-weight: lighter;
+	font-size: 1.5em;
+	color: white;
+	text-align: center;
+	text-shadow: 4px 4px 5px #333333; 
+}
+
+#bannertext h1 {
+	font-weight: lighter;
+	font-size: 4em;
+	margin-bottom: 10px;
+}
+
+.ctabutton {
+	margin: 20px auto;
+	padding: 10px;
+	border-radius: 8px;
+	width: 200px;
+	background-color: #084a82;
+	font-weight: normal;
+	color: white;
+	text-shadow: 0 0 0;
+}
+
+.ctabutton a {
+	vertical-align: middle;
+}
+
+.category {
+	margin-top: 60px;
+	font-size: 2em;
+	font-weight: normal;
+	color: #084a82;
+}
+
+.body2column {
+	margin: 30px 10px 50px 10px;
+	padding: 12px;
+	width: 45%;
+	display: inline-block;
+	text-align: left;
+}
+
+.body2column h2 {
+	margin-bottom: 30px;
+	font-weight: normal;
+	color: #084a82;
+}
+
+.body3column {
+	margin: 100px 10px;
+	padding: 12px;
+	width: 25%;
+	display: inline-block;
+	text-align: center;
+}
+
+.body3column h2 {
+	margin-bottom: 30px;
+	font-weight: normal;
+	color: #084a82;
+}
+
+.homelogo {
+	margin: 30px;
+	
+	width: 100px;
+	height: 100px;
+}
+
+.button {
+	width: 120px;
+}
+
+.cardcontentcol1 {
+	display: inline-block;
+	width: 30%;
+}
+
+.cardcontentcol2 {
+	display: inline-block;
+	width: 60%;
+	vertical-align: top;
+	padding-top: 20px;
+}
+
+.contentarea2 {
+	padding-top: 40px;
+	padding-bottom: 40px;
+}
+
+#banner2 {
+	background-image: url("images/walkinthepark.jpg");
+}
+
+#banner3 {
+	background-image: url("images/cold.jpg");
+}
+
+/* media queries */
+
+@media screen and (min-height: 1081px) {
+	.banner {
+		background-attachment: scroll;
+	}
+}

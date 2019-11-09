@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Coding Is My Trade - Socket Programming Tutorial</title>
+<meta charset="utf-8">
+<link href="../style.css" rel="stylesheet">
+<link href="../content.css" rel="stylesheet">
+<link href="tutorial.css" rel="stylesheet">
+
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css?family=Lato:300,400&display=swap" rel="stylesheet">
+
+<link rel="shortcut icon" href="../favicon.ico">
+
+</head>
+<body>
+
+
+  <header>
+      
+  </header>
+  <nav>
+    <div class="wrapper">
+	  <ul> 
+		<li id="companylogoitem"><a id="companylink" href="../index.html"><img class="companylogo" src="../images/logo.png" alt="Search"></a></li>
+		<li class="navmenuitem"><a href="../contact.html">Contact</a></li>
+		<li class="navmenuitem"><a href="../index.html#projects">Projects</a></li>
+		<li class="navmenuitem"><a href="../index.html#articles">Articles</a></li>
+		<li class="navmenuitem"><a href="../index.html#tutorials">Tutorials</a></li>
+		<li id="searchitem">
+		  <form id="searchform" method="GET" action="http://www.google.com/search">
+			<input id="searchinput" type="text" name="q"></input>
+            <button type="submit" id="searchlink"><img id="searchicon" src="../images/search.svg" alt="Search"></button>
+  		  </form>
+		</li>
+	  </ul>
+	</div>
+  </nav>
+  <main>
+
+<!-- main content area -->
+<div class="wrapper">
+  <div class="topspacer"></div>
+  
+  <div class="toc">
+  <h1>Table of Contents</h1>
+  <ul>
+    <li><a href="#intro">Introduction</a></li>
+    <li><a href="#part1">Part 1: Creating the Server Application</a></li>
+    <li><a href="#part2">Part 2: Creating the Client Application</a></li>
+    <li><a href="#part3">Part 3: Putting It All Together</a></li>
+    <li><a href="#part4">Challenge</a></li>
+  </ul>
+  </div>
+  
+  <div class="content">
+    <h1>Socket Programming Tutorial using C# and the .Net Framework</h1>
+    <a class="anchor" name="intro"></a>
+    <p>In this tutorial, we will create a simple server app and client app that will communicate with each other using TCP.</p>
+
+    <p>Our process flow will use the following steps:</p>
+
+	<ol>
+<li>The server will run and start listening for connections.</li>
+<li>The client will connect to the server and send a message.</li>
+<li>The server will receive and display the message from client.</li>
+<li>The server will respond with its own message and then close the connection.</li>
+<li>The client will receive the server's reponse and display it on the UI.</li>
+	</ol>
+	
+    <a class="anchor" name="part1"></a>
+	<h2>Part 1: Creating the Server Application</h2>
+	<hr>
+	
+	<h3>Step 1</h3>
+	<p>Create a new Console App (.NET Framework) project in Visual Studio.</p>
+	<figure>
+	  <img src="../images/step1.png" alt="Creating a console application">
+	  <figcaption>Figure 1. Creating a console application</figcaption>
+	</figure>
+	
+	<h3>Step 2</h3>
+	<p>Open the Program.cs file and add the following lines near the top.</p>
+	<pre>
+using System.Net;
+using System.Net.Sockets;
+	</pre>
+	<p>This will let us use the <span class="code">System.Net</span> and <span class="code">System.Net.Sockets</span> classes in such a way that we don't have to type the namespaces in our code.</p>
+
+	<h3>Step 3</h3>
+	<p>Add the following lines of code inside the <span class="code">static void Main()</span> method.</p>
+	<pre>
+IPAddress ipAddress = IPAddress.Parse("127.0.0.1");
+IPEndPoint ipEndPoint = new IPEndPoint(ipAddress, 55555);
+	</pre>
+	<p>These lines will create an <span class="code">IPAddress</span> object and <span class="code">IPEndpoint</span> object with an IP address of 127.0.0.1 and a port number of 55555. For now, we will be using the loopback address as the server address to make it easy for us to test the application later. You can change this later if you want to test this on a real network. Also note that the 55555 is just an arbitrary port number. Feel free to use any unused port number on your machine.</p>
+	
+	<h3>Step 4</h3>
+	<p>Add the following lines after the lines in Step 3.</p>
+	<pre>
+Socket connectionSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+connectionSocket.Bind(ipEndPoint);
+connectionSocket.Listen(10);
+
+Console.WriteLine(ipEndPoint.ToString() + ": Waiting for clients...");
+	</pre>
+	<p>The first line in this section instantiates a new socket. The new socket is specified to be a Stream socket that uses TCP as the transport protocol and uses the Internet (InterNetwork) as the network protocol.</p>
+	<p>The second line binds the IP address and port we specified in Step 3 to the socket we instantiated.</p>
+	<p>The third line tells the socket to listen for any connection attempts and have up to 10 connections in the listening queue.</p>
+	<p>Note that the socket we created will only be used for listening to connection requests, hence the name "connectionSocket". We will use a different socket for sending and receiving messages and it will be created on the next step.</p>
+	
+	<h3>Step 5</h3>
+	<p>Create the try-catch block in the code below after the code in Step 4.</p>
+	<pre>
+try
+{
+	Socket messageSocket = connectionSocket.Accept();
+	string clientAddress = messageSocket.RemoteEndPoint.ToString();
+
+}
+catch (Exception ex)
+{
+	Console.WriteLine(ex.ToString());
+}
+	</pre>
+	<p>The above code will accept the first connection in the listening queue of the connection socket and instantiate a brand new socket that we can use for communicating with the client on the connection we accepted.</p>
+	<p>We can get the address of the client by accessing the RemoteEndpoint property of the newly created socket.</p>
+	
+	<h3>Step 6</h3>
+	<p>Inside the try-catch block right at the end, add the following code.</p>
+	<pre>
+do
+{
+	byte[] buffer = new byte[1000];
+	int numberOfBytesReceived = messageSocket.Receive(buffer);
+
+	string message = Encoding.UTF8.GetString(buffer, 0, numberOfBytesReceived);
+
+	Console.WriteLine(clientAddress + " said: " + message);
+} while (messageSocket.Available > 0);
+	</pre>
+	<p>The code above uses a do-while loop to process messages from the socket until we can no longer read messages from the stream. In the first step of the process, we create a byte array called buffer and then use that to receive the data from the socket. We then convert the data from the buffer into a UTF-8 encoded string and display it on the screen..</p>
+	
+	<h3>Step 7</h3>
+	<p>Add the following code after the do-while loop.</p>
+	<pre>
+string response = "Congratulations! You have mastered socket programming.";
+messageSocket.Send(Encoding.UTF8.GetBytes(response));
+
+messageSocket.Shutdown(SocketShutdown.Both);
+messageSocket.Close();
+	</pre>
+	<p>In this code, we create a string response message and convert it to a byte array and use the send() method of our socket to send it to the client. To simplify the program, we immediately shutdown and close the socket after sending the message.</p>
+	
+	<h3>Step 8</h3>
+	<p>Finally, add the following lines at the end, after the catch block.</p>
+	<pre>
+Console.WriteLine();
+Console.WriteLine("Press ENTER to continue...");
+Console.Read();
+	</pre>
+	<p>This code will prevent the console window from immediately closing after the program ends.</p>
+	
+    <a class="anchor" name="part2"></a>
+	<h2>Part 2: Creating the Client Application</h2>
+	<hr>
+
+	<h3>Step 1</h3>
+	<p>In the same solution as our server application in Visual Studio, create a new Windows Forms application with a user interface similar to the image below.</p>
+	<figure>
+	  <img src="../images/democlientui.png" alt="Client user interface">
+	  <figcaption>Figure 2. Client application UI</figcaption>
+	</figure>
+	<p>Name the "Connect" button as btnConnect and the textboxes as txtIpAddress, txtPort, txtMessage and txtResponse.</p>
+	
+	<h3>Step 2</h3>
+	<p>Add the following code to the click event handler of btnConnect.</p>
+	<pre>
+if (!IPAddress.TryParse(txtIpAddress.Text, out IPAddress ipAddress))
+{
+	MessageBox.Show("Please enter a valid IP Address.");
+}
+else if (!int.TryParse(txtPort.Text, out int port) || port < 1 || port > 65535)
+{
+	MessageBox.Show("Please enter a valid port number.");
+}
+else if (txtMessage.Text == string.Empty)
+{
+	MessageBox.Show("Please enter a message to send to the server.");
+}
+else
+{
+	Socket socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+	socket.Connect(new IPEndPoint(ipAddress, port));
+
+	byte[] buffer = Encoding.UTF8.GetBytes(txtMessage.Text);
+
+	socket.Send(buffer);
+
+	do
+	{
+		int numberOfBytesReceived = socket.Receive(buffer);
+
+		string message = Encoding.UTF8.GetString(buffer, 0, numberOfBytesReceived);
+
+		txtResponse.AppendText(message);
+
+	} while (socket.Available > 0);
+
+	txtResponse.AppendText(Environment.NewLine);
+
+}
+	</pre>
+	<p>The above code first validates user input and then creates a socket similar to how we did it in the server application. Instead of binding into an IP address and port, we directly call the socket's connect() method and specify the IP address and port number we want to connect to. The connect() method also automatically assigns the local machine's IP address to the socket and finds an unused ethereal port for the socket to use.</p>
+	<p>After connecting to the server, we send a message the same way we did in the server application. Then we also create a loop similar to what we did in the server app for reading data from the socket and converting the data into a UTF-8 encoded string. We then display the string containing the server's response by appending it to the contents of the txtResponse textbox.</p>
+
+    <a class="anchor" name="part3"></a>
+	<h2>Part 3: Putting It All Together</h2>
+	<hr>
+
+	<h3>Step 1</h3>
+	<p>Run both the server app and the client app at the same time. If the client and server apps are in the same solution, you can easily do this by setting multiple startup projects in your solution.</p>
+	<figure>
+	  <img src="../images/multiplestartups.png" alt="Multiple startup projects in Visual Studio">
+	  <figcaption>Figure 3. Solution Property Pages</figcaption>
+	</figure>
+	<p>To get to the Solution Property Pages dialog, right-click on the solution in the Solution Explorer and click on "Set Startup Projects..."</p>
+	<figure>
+	  <img src="../images/rightclicksolution.png" alt="Solution context menu">
+	  <figcaption>Figure 4. Right-click on the solution</figcaption>
+	</figure>
+	
+	<h3>Step 2</h3>
+	<p>Fill in the server IP address and port number on the client app. Enter your message in the textbox then click on the "Connect" button.</p>
+	<figure>
+	  <img src="../images/democlientrun.png" alt="Running client application">
+	  <figcaption>Figure 5. Running client application</figcaption>
+	</figure>
+  
+	<h3>Step 3</h3>
+	<p>If everything goes well, you should be able to see the client's message on the server app and the server's response in the output textbox on the client app.</p>
+	<p>If you're having any issues, you can compare your client and server code to the DemoServer and DemoClient projects that you can download from <a href=https://github.com/marcvaldez/Socket-Programming-Tutorial" target="cimtprojects">https://github.com/marcvaldez/Socket-Programming-Tutorial</a>.</p>
+	
+    <a class="anchor" name="part4"></a>
+	<h2>Challenge</h2>
+	<hr>
+	
+	<p>Try implementing the following improvements to the client and server apps to practice your socket programming skills:</p>
+	<ul>
+		<li>Add a "Disconnect" button to client app and make the client and server continue exchanging messages until the "Disconnect" button is clicked.</li>
+		<li>Modify the server app to make it able to connect to multiple clients.</li>
+		<li>Convert the client app into a peer-to-peer chat program by adding some of the server code to the client. (A working peer-to-peer chat program can be downloaded from <a href=https://github.com/marcvaldez/Socket-Programming-Tutorial" target="cimtprojects">https://github.com/marcvaldez/Socket-Programming-Tutorial</a>.)</li>
+	<ul>
+	</div>
+  <div class="adscolumn">
+	<a href="http://www.nbcc.ca" target="_blank"><img src="../images/ads.png" alt="Ad"></a>
+  </div>
+
+</div>
+
+
+  </main>
+  <footer>
+    <div class="wrapper">
+	  <div class="footercolumn">
+	    <div id="footerlogocontainer">
+	      <a href="../index.html"><img class="companylogo" src="../images/logo.png" alt="Coding is my Trade"></a>
+		</div>
+		<span><a href="mailto:info@codingismy.trade?subject=CIMT">info@codingismy.trade</a></span>
+	  </div>
+	  <div class="footercolumn">
+	  <h3>Resources</h3>
+	  <ul>
+		<li><a href="../index.html#tutorials">Tutorials</a></li>
+		<li><a href="../index.html#articles">Articles</a></li>
+		<li><a href="../index.html#projects">Projects</a></li>
+	  </ul>
+	  </div>
+	  <div class="footercolumn">
+	  <h3>Company</h3>
+	  <ul>
+	    <li><a href="../contact.html">Contact Us</a></li>
+	  </ul>
+	  </div>
+      <div class="centertext attribution">Created my free logo and icons at <a href="http://www.logomakr.com">LogoMakr.com</a></div>
+      <hr>
+      <div id="copyright">Copyright &copy; 2019 Marco Valdez</div>
+   </div>
+  </footer>
+
+
+</body>
+</html>

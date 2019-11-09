@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Coding Is My Trade - All About Network Sockets</title>
+<meta charset="utf-8">
+<link href="../style.css" rel="stylesheet">
+<link href="../content.css" rel="stylesheet">
+<link href="article.css" rel="stylesheet">
+
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css?family=Lato:300,400&display=swap" rel="stylesheet">
+
+<link rel="shortcut icon" href="../favicon.ico">
+
+</head>
+<body>
+
+
+  <header>
+      
+  </header>
+  <nav>
+    <div class="wrapper">
+	  <ul> 
+		<li id="companylogoitem"><a id="companylink" href="../index.html"><img class="companylogo" src="../images/logo.png" alt="Search"></a></li>
+		<li class="navmenuitem"><a href="../contact.html">Contact</a></li>
+		<li class="navmenuitem"><a href="../index.html#projects">Projects</a></li>
+		<li class="navmenuitem"><a href="../index.html#articles">Articles</a></li>
+		<li class="navmenuitem"><a href="../index.html#tutorials">Tutorials</a></li>
+		<li id="searchitem">
+		  <form id="searchform" method="GET" action="http://www.google.com/search">
+			<input id="searchinput" type="text" name="q"></input>
+            <button type="submit" id="searchlink"><img id="searchicon" src="../images/search.svg" alt="Search"></button>
+  		  </form>
+		</li>
+	  </ul>
+	</div>
+  </nav>
+  <main>
+
+<!-- main content area -->
+<div class="wrapper">
+  <div class="topspacer"></div>
+  
+  <div class="toc">
+  <h1>Table of Contents</h1>
+  <ul>
+    <li><a href="#part1">What is as Socket?</a></li>
+    <li><a href="#part2">Types of Sockets</a></li>
+    <li><a href="#part3">Socket API</a></li>
+    <li><a href="#part4">Berkeley Sockets</a></li>
+    <li><a href="#part5">List of Common Berkeley Socket API Functions</a></li>
+    <li><a href="#part6">Socket Protocols</a></li>
+    <li><a href="#part7">Socket Domains</a></li>
+    <li><a href="#part8">Socket Operating Modes</a></li>
+  </ul>
+  </div>
+  
+  <div class="content">
+    <h1>All About Network Sockets</h1>
+	
+    <a class="anchor" name="part1"></a>
+	<h2>What is as Socket?</h2>
+	<hr>
+	<br>
+	<p>A socket is one endpoint of a two-way communication link between two programs running on the network.</p>
+	
+    <a class="anchor" name="part2"></a>
+	<h2>Types of Sockets</h2>
+	<hr>
+	<h3>Stream Socket</h3>
+	<ul>
+		<li>Also called connection-oriented sockets</li>
+		<li>Sends and receives messages through streams (much like reading/writing data from files)</li>
+		<li>Doesn't care about message boundaries</li>
+		<li>Commonly used for TCP</li>
+	</ul>
+	<h3>Datagram Socket</h3>
+	<ul>
+		<li>Also called connectionless sockets</li>
+		<li>Sends and receives messages as independent packets with defined boundaries (i.e. one receive = one message)</li>
+		<li>Commonly used for UDP</li>
+	</ul>
+	<h3>Raw Socket</h3>
+	<ul>
+		<li>Allows direct sending and receiving of IP packets without any protocol-specific transport layer formatting (basically skips the transport layer)</li>
+		<li>Has no concept of ports</li>
+		<li>Can be used if you want to implement your own transport protocol</li>
+		<li>Also used by network utility programs such as nmap, ping, etc.</li>
+	</ul>
+
+    <a class="anchor" name="part3"></a>
+	<h2>Socket API</h2>
+	<hr>
+	<br>
+	<p>A collection of functions/methods/commands usually provided by the operating system to enable programs to use sockets and communicate with other programs.</p>
+	<br>
+	
+	<figure>
+	  <img src="../images/SocketsontheOSIModel.png" alt="Sockets in the OSI and TCP/IP models">
+	  <figcaption>Figure 1. This diagram shows how the Socket API fits in the OSI and TCP/IP models.</figcaption>
+	</figure>
+	
+    <a class="anchor" name="part4"></a>
+	<h2>Berkeley Sockets</h2>
+	<hr>
+	<br>
+	<ul>
+		<li>Also called connectionless sockets</li>
+		<li>Sends and receives messages as independent packets with defined boundaries (i.e. one receive = one message)</li>
+		<li>Commonly used for UDP</li>
+	</ul>
+	
+    <a class="anchor" name="part5"></a>
+	<h2>List of Common Berkeley Socket API Functions</h2>
+	<hr>
+	<h3>socket()</h3>
+	<p>Instantiates a socket object</p>
+	<h3>bind()</h3>
+	<p>Binds an IP address and port number to a socket object</p>
+	<h3>connect()</h3>
+	<p>Establishes a connection to a remote host</p>
+	<h3>listen()</h3>
+	<p>Used by servers to listen for incoming connections</p>
+	<h3>accept()</h3>
+	<p>Accepts a connection request from the listen() function and returns a new socket associated with the new connection</p>
+	<h3>send()</h3>
+	<p>Sends data through the socket</p>
+	<h3>recv()</h3>
+	<p>Receives data from a socket</p>
+	<h3>close()</h3>
+	<p>Closes the socket</p>
+	<br>
+	<h3>Other common socket functions include:</h3>
+	<ul>
+		<li>read(), recvfrom(), or recvmsg()</li>
+		<li>write(), sendto(), or sendmsg()</li>
+		<li>gethostbyname() and gethostbyaddr()</li>
+	</ul>
+	<h3>TCP Socket API Call Sequence</h3>
+	<br>
+	<figure>
+	  <img src="../images/SocketFlowDiagram.png" alt="TCP Socket Flow Diagram">
+	  <figcaption>Figure 2. This diagram shows a typical typical TCP socket API call sequence.</figcaption>
+	</figure>
+	<h3>UDP Socket API Call Sequence</h3>
+	<br>
+	<figure>
+	  <img src="../images/SocketFlowDiagramUDP.png" alt="TCP Socket Flow Diagram">
+	  <figcaption>Figure 3. This diagram shows a typical typical UDP socket API call sequence. Note the absense of connection-specific socket calls such as connect(), listen(), and accept().</figcaption>
+	</figure>
+
+    <a class="anchor" name="part6"></a>
+	<h2>Socket Protocols</h2>
+	<hr>
+	<br>
+	<ul>
+		<li>IPPROTO_TCP for TCP</li>
+		<li>IPPROTO_UDP for UDP</li>
+		<li>Other values include IPPROTO_SCTP and IPPROTO_DCCP</li>
+	</ul>
+	<br>
+	<p>Note that you can use the same port number for different protocols.</p>
+
+    <a class="anchor" name="part7"></a>
+	<h2>Socket Domains (aka Protocol Family/Address Family)</h2>
+	<hr>
+	<h3>AF_INET/PF_INET</h3>
+	<ul>
+		<li>Corresponds to IPv4</li>
+		<li>AddressFamily.InterNetwork in the .NET implementation</li>
+	</ul>
+	<h3>AF_INET6/PF_INET6</h3>
+	<ul>
+		<li>Corresponds to IPv6</li>
+		<li>AddressFamily.InterNetworkV6 in the .NET implementation</li>
+	</ul>
+	<h3>AF_UNIX/PF_UNIX</h3>
+	<ul>
+		<li>Corresponds to local sockets (using a file)</li>
+		<li>Used in UNIX for inter-process communication (IPC)</li>
+	</ul>
+
+    <a class="anchor" name="part8"></a>
+	<h2>Socket Operating Modes</h2>
+	<hr>
+	<h3>Blocking Mode</h3>
+	<ul>
+		<li>When operating in Blocking mode, some socket functions such as accept(), send(), and recv() will block execution until the operation is successful. The accept() function for instance, will wait until a client initiates a connection to the server.</li>
+		<li>In .NET, this can be set by assigning true to the Socket.Blocking property. This is the default value in .NET.</li>
+	</ul>
+	<h3>Non-Blocking Mode</h3>
+	<ul>
+		<li>In non-blocking mode, socket functions will not block execution.</li>
+		<li>In .NET, this can be set by assigning false to the Socket.Blocking property.</li>
+	</ul>
+
+	<br>
+	<p>Sources:</p>
+	<p><a href="https://en.wikipedia.org/wiki/Network_socket">https://en.wikipedia.org/wiki/Network_socket</a></p>
+	<p><a href="https://en.wikipedia.org/wiki/Berkeley_sockets">https://en.wikipedia.org/wiki/Berkeley_sockets</a></p>
+	<p><a href="https://docs.oracle.com/javase/tutorial/networking/sockets/definition.html">https://docs.oracle.com/javase/tutorial/networking/sockets/definition.html</a></p>
+	<p><a href="http://homepage.smc.edu/morgan_david/cs70/sockets.htm">http://homepage.smc.edu/morgan_david/cs70/sockets.htm</a></p>
+	<p><a href="http://ijcsit.com/docs/Volume%205/vol5issue03/ijcsit20140503462.pdf">http://ijcsit.com/docs/Volume%205/vol5issue03/ijcsit20140503462.pdf</a></p>
+	<p><a href="https://docs.microsoft.com/en-us/dotnet/framework/network-programming">https://docs.microsoft.com/en-us/dotnet/framework/network-programming</a></p>
+	
+	</div>
+  <div class="adscolumn">
+	<a href="http://www.nbcc.ca" target="_blank"><img src="../images/ads.png" alt="Ad"></a>
+  </div>
+
+</div>
+
+
+  </main>
+  <footer>
+    <div class="wrapper">
+	  <div class="footercolumn">
+	    <div id="footerlogocontainer">
+	      <a href="../index.html"><img class="companylogo" src="../images/logo.png" alt="Coding is my Trade"></a>
+		</div>
+		<span><a href="mailto:info@codingismy.trade?subject=CIMT">info@codingismy.trade</a></span>
+	  </div>
+	  <div class="footercolumn">
+	  <h3>Resources</h3>
+	  <ul>
+		<li><a href="../index.html#tutorials">Tutorials</a></li>
+		<li><a href="../index.html#articles">Articles</a></li>
+		<li><a href="../index.html#projects">Projects</a></li>
+	  </ul>
+	  </div>
+	  <div class="footercolumn">
+	  <h3>Company</h3>
+	  <ul>
+	    <li><a href="../contact.html">Contact Us</a></li>
+	  </ul>
+	  </div>
+      <div class="centertext attribution">Created my free logo and icons at <a href="http://www.logomakr.com">LogoMakr.com</a></div>
+      <hr>
+      <div id="copyright">Copyright &copy; 2019 Marco Valdez</div>
+   </div>
+  </footer>
+
+
+</body>
+</html>

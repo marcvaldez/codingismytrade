@@ -39,3 +39,7 @@ h1 {
 	font-size: 1.2em;
 	padding: 10px 30px;
 }
+
+.button:hover {
+	cursor: pointer;
+}
