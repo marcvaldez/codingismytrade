@@ -40,6 +40,14 @@ h1 {
 	padding: 10px 30px;
 }
 
+.contactform label {
+	display: block;
+}
+
+.contactform p {
+	margin: 10px 0;
+}
+
 .button:hover {
 	cursor: pointer;
 }

@@ -17,27 +17,27 @@
 <body>
 
     <header>
+		<nav>
+			<div class="wrapper">
+				<ul>
+					<li id="companylogoitem">
+						<a id="companylink" href="index.html"><img class="companylogo" src="images/logo.png" alt="Search"></a>
+					</li>
+					<li class="navmenuitem"><a href="contact.html">Contact</a></li>
+					<li class="navmenuitem"><a href="index.html#projects">Projects</a></li>
+					<li class="navmenuitem"><a href="index.html#articles">Articles</a></li>
+					<li class="navmenuitem"><a href="index.html#tutorials">Tutorials</a></li>
+					<li id="searchitem">
+						<form id="searchform" method="GET" action="https://www.google.com/search">
+							<input id="searchinput" type="text" name="q">
+							<button type="submit" id="searchlink"><img id="searchicon" src="images/search.svg" alt="Search"></button>
+						</form>
+					</li>
+				</ul>
+			</div>
+		</nav>
+	</header>
 
-    </header>
-    <nav>
-        <div class="wrapper">
-            <ul>
-                <li id="companylogoitem">
-                    <a id="companylink" href="index.html"><img class="companylogo" src="images/logo.png" alt="Search"></a>
-                </li>
-                <li class="navmenuitem"><a href="contact.html">Contact</a></li>
-                <li class="navmenuitem"><a href="index.html#projects">Projects</a></li>
-                <li class="navmenuitem"><a href="index.html#articles">Articles</a></li>
-                <li class="navmenuitem"><a href="index.html#tutorials">Tutorials</a></li>
-                <li id="searchitem">
-                    <form id="searchform" method="GET" action="https://www.google.com/search">
-                        <input id="searchinput" type="text" name="q">
-                        <button type="submit" id="searchlink"><img id="searchicon" src="images/search.svg" alt="Search"></button>
-                    </form>
-                </li>
-            </ul>
-        </div>
-    </nav>
     <main>
 
         <!-- main content area -->
@@ -49,34 +49,31 @@
 
                 <div class="contactform card">
                     <form method="POST" action="https://formspree.io/xnqqjjpj">
-                        <div>Your name:</div>
-                        <input type="text" name="contactname">
-                        <div>Your email address:</div>
-                        <input type="text" name="contactemail">
-                        <div>Your message:</div>
-                        <textarea name="message"></textarea>
-                        <div>How did you learn about CodingIsMy.Trade?</div>
-                        <input type="radio" name="referrer" value="search">Search Engine
-                        <br>
-                        <input type="radio" name="referrer" value="fb">Facebook
-                        <br>
-                        <input type="radio" name="referrer" value="twitter">Twitter
-                        <br>
-                        <input type="radio" name="referrer" value="linkedin">LinkedIn
-                        <br>
-                        <input type="radio" name="referrer" value="discord">Discord
-                        <br>
-                        <input type="radio" name="referrer" value="radio">Radio
-                        <br>
-                        <input type="radio" name="referrer" value="tv">TV
-                        <br>
-                        <input type="radio" name="referrer" value="print">Print
-                        <br>
-                        <input type="radio" name="referrer" value="wom">Word of Mouth
-                        <br>
-                        <input type="radio" name="referrer" value="other">Other
+						<fieldset>
+                        <label for="contactname">Your name:</label>
+                        <input id="contactname" type="text" name="contactname">
+                        <label for="contactemail">Your email address:</label>
+                        <input id="contactemail" type="text" name="contactemail">
+                        <label for="message">Your message:</label>
+                        <textarea id="message" name="message"></textarea>
+						</fieldset>
+						<fieldset>
+                        <p>How did you learn about CodingIsMy.Trade?</p>
+                        <label for=""><input type="radio" name="referrer" id="search" value="search">Search Engine</label>
+                        <label for=""><input type="radio" name="referrer" id="fb" value="fb">Facebook</label>
+                        <label for=""><input type="radio" name="referrer" id="twitter" value="twitter">Twitter</label>
+                        <label for=""><input type="radio" name="referrer" id="linkedin" value="linkedin">LinkedIn</label>
+                        <label for=""><input type="radio" name="referrer" id="discord" value="discord">Discord</label>
+                        <label for=""><input type="radio" name="referrer" id="radio" value="radio">Radio</label>
+                        <label for=""><input type="radio" name="referrer" id="tv" value="tv">TV</label>
+                        <label for=""><input type="radio" name="referrer" id="print" value="print">Print</label>
+                        <label for=""><input type="radio" name="referrer" id="wom" value="wom">Word of Mouth</label>
+                        <label for=""><input type="radio" name="referrer" id="other" value="other">Other</label>
                         <div>
-                            <input type="checkbox" name="spam">I wish to get the latest updates and promotions from CodingIsMy.Trade</div>
+                            <label for="spam"><input id="spam" type="checkbox" name="spam">
+							I wish to get the latest updates and promotions from CodingIsMy.Trade</label>
+						</div>
+						</fieldset>
                         <div class="centertext">
                             <input class="button" type="submit">
                         </div>

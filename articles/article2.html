@@ -18,7 +18,6 @@
 
   <header>
       
-  </header>
   <nav>
     <div class="wrapper">
 	  <ul> 
@@ -36,13 +35,15 @@
 	  </ul>
 	</div>
   </nav>
+  </header>
+
   <main>
 
 <!-- main content area -->
 <div class="wrapper">
   <div class="topspacer"></div>
   
-  <div class="toc">
+  <section class="toc">
   <h1>Table of Contents</h1>
   <ul>
     <li><a href="#intro">System.Net.Sockets</a></li>
@@ -50,15 +51,14 @@
     <li><a href="#part2">Commonly Used Asynchronous Methods</a></li>
     <li><a href="#part3">Commonly Used Properties of the Socket Class</a></li>
   </ul>
-  </div>
+  </section>
   
-  <div class="content">
+  <article class="content">
     <h1>Microsoft .NET Socket API Implementation</h1>
 
     <a class="anchor" id="intro"></a>
 	<h2>System.Net.Sockets</h2>
 	<hr>
-	<br>
 	<ul>
 		<li>The System.Net.Sockets.Socket class is an implementation of the Berkeley Sockets API in the .NET framework.</li>
 		<li>In addition to the standard Berkeley Socket functions, it also features methods for asynchronous sending and receiving of data.</li>
@@ -83,7 +83,6 @@
 	<h3>AcceptAsync(), BeginAccept(), and EndAccept()</h3>
 	<h3>SendAsync(), BeginSend(), and EndSend()</h3>
 	<h3>ReceiveAsync(), BeginReceive(), and EndReceive()</h3>
-	<br>
 	<p>Asynchronous methods are helpful when you do not want your application to block while waiting for operations such as sending and receiving to complete. These are useful for programs that are event-driven or user-facing such as Windows Forms apps.</p>
 	<p>When using the asynchronous methods, you may no longer need to set the Blocking mode of the socket to false.</p>
 	<p>The *Async versions of the methods are used if you prefer to code using the <a href="https://docs.microsoft.com/en-us/dotnet/standard/asynchronous-programming-patterns/task-based-asynchronous-pattern-tap">Task-based asynchronous pattern (TAP)</a> which is a style of programming asynchronous code.</p>
@@ -104,13 +103,12 @@
 	<p>Allows you to get the IP address and port you are connected to on the other end.</p>
 	<h3>Ttl</h3>
 	<p>Gets or sets a value that specifies the Time To Live (TTL) value of Internet Protocol (IP) packets sent by the Socket.</p>
-	<br><br>
 	<p>Source: <a href="https://docs.microsoft.com/en-us/dotnet/api/system.net.sockets.socket?view=netframework-4.8">https://docs.microsoft.com/en-us/dotnet/api/system.net.sockets.socket?view=netframework-4.8</a></p>
 
-	</div>
-  <div class="adscolumn">
+	</article>
+  <aside class="adscolumn">
 	<a href="http://www.nbcc.ca" target="_blank"><img src="../images/ads.png" alt="Ad"></a>
-  </div>
+  </aside>
 
 </div>
 

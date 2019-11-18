@@ -30,17 +30,17 @@
 }
 
 .ctacontainer {
-	margin: 20px auto;
+	margin: 40px auto;
 }
 
 .ctabutton {
-	padding: 10px;
+	padding: 14px 20px;
 	border-radius: 8px;
-	width: 200px;
 	background-color: #084a82;
 	font-weight: normal;
 	color: white;
 	text-shadow: 0 0 0;
+	letter-spacing: 0.07em;
 }
 
 .ctabutton:hover {
@@ -135,11 +135,12 @@
 }
 
 .contentarea2 div.card {
-	border: 3px solid white;
+/*	border: 3px solid white;*/
+	transition: transform .2s;
 }
 
 .contentarea2 div.card:hover {
-	border: 3px dotted #ff8300;
+	transform: scale(1.05);
 }
 
 #banner2 {

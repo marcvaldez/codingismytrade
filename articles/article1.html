@@ -18,7 +18,6 @@
 
   <header>
       
-  </header>
   <nav>
     <div class="wrapper">
 	  <ul> 
@@ -36,13 +35,15 @@
 	  </ul>
 	</div>
   </nav>
+  </header>
+
   <main>
 
 <!-- main content area -->
 <div class="wrapper">
   <div class="topspacer"></div>
   
-  <div class="toc">
+  <section class="toc">
   <h1>Table of Contents</h1>
   <ul>
     <li><a href="#part1">What is as Socket?</a></li>
@@ -54,15 +55,14 @@
     <li><a href="#part7">Socket Domains</a></li>
     <li><a href="#part8">Socket Operating Modes</a></li>
   </ul>
-  </div>
+  </section>
   
-  <div class="content">
+  <article class="content">
     <h1>All About Network Sockets</h1>
 	
     <a class="anchor" id="part1"></a>
 	<h2>What is as Socket?</h2>
 	<hr>
-	<br>
 	<p>A socket is one endpoint of a two-way communication link between two programs running on the network.</p>
 	
     <a class="anchor" id="part2"></a>
@@ -92,9 +92,7 @@
     <a class="anchor" id="part3"></a>
 	<h2>Socket API</h2>
 	<hr>
-	<br>
 	<p>A collection of functions/methods/commands usually provided by the operating system to enable programs to use sockets and communicate with other programs.</p>
-	<br>
 	
 	<figure>
 	  <img src="../images/SocketsontheOSIModel.png" alt="Sockets in the OSI and TCP/IP models">
@@ -104,7 +102,6 @@
     <a class="anchor" id="part4"></a>
 	<h2>Berkeley Sockets</h2>
 	<hr>
-	<br>
 	<ul>
 		<li>Also called connectionless sockets</li>
 		<li>Sends and receives messages as independent packets with defined boundaries (i.e. one receive = one message)</li>
@@ -130,7 +127,6 @@
 	<p>Receives data from a socket</p>
 	<h3>close()</h3>
 	<p>Closes the socket</p>
-	<br>
 	<h3>Other common socket functions include:</h3>
 	<ul>
 		<li>read(), recvfrom(), or recvmsg()</li>
@@ -138,13 +134,11 @@
 		<li>gethostbyname() and gethostbyaddr()</li>
 	</ul>
 	<h3>TCP Socket API Call Sequence</h3>
-	<br>
 	<figure>
 	  <img src="../images/SocketFlowDiagram.png" alt="TCP Socket Flow Diagram">
 	  <figcaption>Figure 2. This diagram shows a typical typical TCP socket API call sequence.</figcaption>
 	</figure>
 	<h3>UDP Socket API Call Sequence</h3>
-	<br>
 	<figure>
 	  <img src="../images/SocketFlowDiagramUDP.png" alt="TCP Socket Flow Diagram">
 	  <figcaption>Figure 3. This diagram shows a typical typical UDP socket API call sequence. Note the absense of connection-specific socket calls such as connect(), listen(), and accept().</figcaption>
@@ -153,13 +147,11 @@
     <a class="anchor" id="part6"></a>
 	<h2>Socket Protocols</h2>
 	<hr>
-	<br>
 	<ul>
 		<li>IPPROTO_TCP for TCP</li>
 		<li>IPPROTO_UDP for UDP</li>
 		<li>Other values include IPPROTO_SCTP and IPPROTO_DCCP</li>
 	</ul>
-	<br>
 	<p>Note that you can use the same port number for different protocols.</p>
 
     <a class="anchor" id="part7"></a>
@@ -195,7 +187,7 @@
 		<li>In .NET, this can be set by assigning false to the Socket.Blocking property.</li>
 	</ul>
 
-	<br>
+<section class="sources">
 	<p>Sources:</p>
 	<p><a href="https://en.wikipedia.org/wiki/Network_socket">https://en.wikipedia.org/wiki/Network_socket</a></p>
 	<p><a href="https://en.wikipedia.org/wiki/Berkeley_sockets">https://en.wikipedia.org/wiki/Berkeley_sockets</a></p>
@@ -203,11 +195,11 @@
 	<p><a href="http://homepage.smc.edu/morgan_david/cs70/sockets.htm">http://homepage.smc.edu/morgan_david/cs70/sockets.htm</a></p>
 	<p><a href="http://ijcsit.com/docs/Volume%205/vol5issue03/ijcsit20140503462.pdf">http://ijcsit.com/docs/Volume%205/vol5issue03/ijcsit20140503462.pdf</a></p>
 	<p><a href="https://docs.microsoft.com/en-us/dotnet/framework/network-programming">https://docs.microsoft.com/en-us/dotnet/framework/network-programming</a></p>
-	
-	</div>
-  <div class="adscolumn">
+</section>
+	</article>
+  <aside class="adscolumn">
 	<a href="http://www.nbcc.ca" target="_blank"><img src="../images/ads.png" alt="Ad"></a>
-  </div>
+  </aside>
 
 </div>
 

@@ -18,7 +18,6 @@
 
   <header>
       
-  </header>
   <nav>
     <div class="wrapper">
 	  <ul> 
@@ -36,13 +35,16 @@
 	  </ul>
 	</div>
   </nav>
+  
+  </header>
+
   <main>
 
 <!-- main content area -->
 <div class="wrapper">
   <div class="topspacer"></div>
   
-  <div class="toc">
+  <section class="toc">
   <h1>Table of Contents</h1>
   <ul>
     <li><a href="#intro">Introduction</a></li>
@@ -51,9 +53,9 @@
     <li><a href="#part3">Part 3: Putting It All Together</a></li>
     <li><a href="#part4">Challenge</a></li>
   </ul>
-  </div>
+  </section>
   
-  <div class="content">
+  <article class="content">
     <h1>Socket Programming Using C# and the .Net Framework</h1>
     <a class="anchor" id="intro"></a>
     <p>In this tutorial, we will create a simple server app and client app that will communicate with each other using TCP.</p>
@@ -139,7 +141,7 @@ do
 	Console.WriteLine(clientAddress + " said: " + message);
 } while (messageSocket.Available > 0);
 	</pre>
-	<p>The code above uses a do-while loop to process messages from the socket until we can no longer read messages from the stream. In the first step of the process, we create a byte array called buffer and then use that to receive the data from the socket. We then convert the data from the buffer into a UTF-8 encoded string and display it on the screen..</p>
+	<p>The code above uses a do-while loop to process messages from the socket until we can no longer read messages from the stream. In the first step of the process, we create a byte array called buffer and then use that to receive the data from the socket. We then convert the data from the buffer into a UTF-8 encoded string and display it on the screen.</p>
 	
 	<h3>Step 7</h3>
 	<p>Add the following code after the do-while loop.</p>
@@ -251,10 +253,10 @@ else
 		<li>Modify the server app to make it able to connect to multiple clients.</li>
 		<li>Convert the client app into a peer-to-peer chat program by adding some of the server code to the client. (A working peer-to-peer chat program can be downloaded from <a href="https://github.com/marcvaldez/Socket-Programming-Tutorial" target="cimtprojects">https://github.com/marcvaldez/Socket-Programming-Tutorial</a>.)</li>
 	</ul>
-	</div>
-  <div class="adscolumn">
+	</article>
+  <aside class="adscolumn">
 	<a href="http://www.nbcc.ca" target="_blank"><img src="../images/ads.png" alt="Ad"></a>
-  </div>
+  </aside>
 
 </div>
 
