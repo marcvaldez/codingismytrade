@@ -53,6 +53,10 @@ fieldset {
 	margin: 0;
 }
 
+#searchform label {
+	display: none;
+}
+
 .centertext {
 	text-align: center;
 }
