@@ -80,7 +80,6 @@ fieldset {
 .button {
 	margin: 30px auto 20px auto;
 	line-height: 24px;
-	border: 2px solid #ff8300;
 	border-radius: 5px;
 	background-color: #ff8300;
 	color: white;
@@ -90,7 +89,6 @@ fieldset {
 
 .button:hover {
 	background-color: #ff2800;
-	border-color: #ff2800;
 }
 
 .button:visited {
