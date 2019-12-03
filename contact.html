@@ -30,6 +30,7 @@
 					<li id="searchitem">
 						<form id="searchform" method="GET" action="https://www.google.com/search">
 							<input id="searchinput" type="text" name="q">
+							<label for="searchinput">Google search</label>
 							<button type="submit" id="searchlink"><img id="searchicon" src="images/search.svg" alt="Search"></button>
 						</form>
 					</li>
@@ -50,32 +51,34 @@
                 <div class="contactform card">
                     <form method="POST" action="https://formspree.io/xnqqjjpj">
 						<fieldset>
-                        <label for="contactname">Your name:</label>
-                        <input id="contactname" type="text" name="contactname">
+						<p class="note">Fields marked with * are required</p>
+                        <label for="contactname">* Your name:</label>
+                        <input id="contactname" type="text" name="contactname" required>
                         <label for="contactemail">Your email address:</label>
-                        <input id="contactemail" type="text" name="contactemail">
-                        <label for="message">Your message:</label>
-                        <textarea id="message" name="message"></textarea>
+                        <input id="contactemail" type="email" name="contactemail">
+                        <label for="message">* Your message:</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Write your message here..." required></textarea>
 						</fieldset>
-						<fieldset>
-                        <p>How did you learn about CodingIsMy.Trade?</p>
-                        <label for=""><input type="radio" name="referrer" id="search" value="search">Search Engine</label>
-                        <label for=""><input type="radio" name="referrer" id="fb" value="fb">Facebook</label>
-                        <label for=""><input type="radio" name="referrer" id="twitter" value="twitter">Twitter</label>
-                        <label for=""><input type="radio" name="referrer" id="linkedin" value="linkedin">LinkedIn</label>
-                        <label for=""><input type="radio" name="referrer" id="discord" value="discord">Discord</label>
-                        <label for=""><input type="radio" name="referrer" id="radio" value="radio">Radio</label>
-                        <label for=""><input type="radio" name="referrer" id="tv" value="tv">TV</label>
-                        <label for=""><input type="radio" name="referrer" id="print" value="print">Print</label>
-                        <label for=""><input type="radio" name="referrer" id="wom" value="wom">Word of Mouth</label>
-                        <label for=""><input type="radio" name="referrer" id="other" value="other">Other</label>
+						<fieldset class="inlinelabel">
+                        <legend>How did you learn about CodingIsMy.Trade?</legend>
+                        <div><input type="radio" name="referrer" id="search" value="search"><label for="search">Search Engine</label></div>
+                        <div><input type="radio" name="referrer" id="fb" value="fb"><label for="fb">Facebook</label></div>
+                        <div><input type="radio" name="referrer" id="twitter" value="twitter"><label for="twitter">Twitter</label></div>
+                        <div><input type="radio" name="referrer" id="linkedin" value="linkedin"><label for="linkedin">LinkedIn</label></div>
+                        <div><input type="radio" name="referrer" id="discord" value="discord"><label for="discord">Discord</label></div>
+                        <div><input type="radio" name="referrer" id="radio" value="radio"><label for="radio">Radio</label></div>
+                        <div><input type="radio" name="referrer" id="tv" value="tv"><label for="tv">TV</label></div>
+                        <div><input type="radio" name="referrer" id="print" value="print"><label for="print">Print</label></div>
+                        <div><input type="radio" name="referrer" id="wom" value="wom"><label for="wom">Word of Mouth</label></div>
+                        <div><input type="radio" name="referrer" id="other" value="other"><label for="other">Other</label></div>
                         <div>
-                            <label for="spam"><input id="spam" type="checkbox" name="spam">
-							I wish to get the latest updates and promotions from CodingIsMy.Trade</label>
+                            <input id="spam" type="checkbox" name="spam">
+							<label for="spam">I wish to get the latest updates and promotions from CodingIsMy.Trade</label>
 						</div>
 						</fieldset>
-                        <div class="centertext">
-                            <input class="button" type="submit">
+                        <div>
+                            <input class="button" type="submit" value="Send">
+                            <input class="button" type="reset" value="Clear">
                         </div>
                     </form>
                 </div>

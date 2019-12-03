@@ -15,7 +15,7 @@ h1 {
 	font-size: 1.2em;
 }
 
-.contactform input[type=text], textarea {
+.contactform input[type=text], input[type=email], textarea {
 	margin: 12px 0 24px 0;
 	border: 1px solid #084a82;
 	line-height: 30px;
@@ -23,25 +23,39 @@ h1 {
 	font-size: 1.2em;
 }
 
-.contactform textarea {
-	height: 200px;
-}
-
-.contactform input[type=radio] {
+input[type=radio] {
 	margin: 10px;
+	display: inline-block;
 }
 
-.contactform input[type=checkbox] {
+input[type=checkbox] {
 	margin: 30px 10px;
 }
 
-.contactform input[type=submit] {
+input[type=submit], input[type=reset] {
 	font-size: 1.2em;
 	padding: 10px 30px;
+	display: inline-block;
+	margin-left: 120px;
 }
 
-.contactform label {
+input[type=reset] {
+	float: right;
+	margin-right: 120px;
+}
+
+label {
 	display: block;
+}
+
+.inlinelabel label {
+	display: inline-block;
+}
+
+.note {
+	font-size: 0.8em;
+	font-style: italic;
+	color: #ff2800;
 }
 
 .contactform p {
